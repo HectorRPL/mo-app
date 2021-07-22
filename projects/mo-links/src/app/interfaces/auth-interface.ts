@@ -1,6 +1,6 @@
 export interface AuthInterface {
-  name?: String;
-  email: String;
-  password: String;
-  token?: String;
+  name?: string;
+  email: string;
+  password: string;
+  token?: string;
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarModule } from './components/nav-bar/nav-bar.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorRequestService } from './services/interceptor-request/interceptor-request.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { InterceptorRequestService } from './services/interceptor-request/interc
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     NavBarModule
   ],
   providers: [

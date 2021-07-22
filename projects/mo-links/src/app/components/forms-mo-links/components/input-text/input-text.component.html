@@ -1,0 +1,18 @@
+<form
+  novalidate
+  autocomplete='off'
+  [formGroup]='this.parentForm'
+>
+  <mat-form-field
+    class='bank-custom-inputs'
+    appearance='outline'
+  >
+    <mat-label>{{this.placeholder}}</mat-label>
+    <input
+      matInput
+      [placeholder]='this.placeholder'
+      [formControlName]='this.formCtrlName'
+    >
+    <mat-error *ngIf="this.parentForm.get(this.formCtrlName)?.hasError('required')"><strong> * Requerido </strong></mat-error>
+  </mat-form-field>
+</form>

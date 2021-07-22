@@ -1,6 +1,6 @@
 export interface ListInterface {
-  id?: String;
-  createdAt?: String;
-  url: String;
-  name: String;
+  id?: string;
+  createdAt?: string;
+  url: string;
+  name: string;
 }

@@ -130,6 +130,7 @@
               "projects/mo-links/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/mo-links/src/styles.css"
             ],
             "scripts": []
