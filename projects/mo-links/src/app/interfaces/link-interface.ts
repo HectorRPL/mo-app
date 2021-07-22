@@ -1,4 +1,4 @@
-export interface ListInterface {
+export interface LinkInterface {
   id?: string;
   createdAt?: string;
   url: string;

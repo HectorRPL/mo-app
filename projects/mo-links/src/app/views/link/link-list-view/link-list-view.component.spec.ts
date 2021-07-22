@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LinkComponent } from './link.component';
+import { LinkListViewComponent } from './link-list-view.component';
 
-describe('LinkComponent', () => {
-  let component: LinkComponent;
-  let fixture: ComponentFixture<LinkComponent>;
+describe('LinkListViewComponent', () => {
+  let component: LinkListViewComponent;
+  let fixture: ComponentFixture<LinkListViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LinkComponent ]
+      declarations: [ LinkListViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LinkComponent);
+    fixture = TestBed.createComponent(LinkListViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

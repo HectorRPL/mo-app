@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LinkComponent } from './link.component';
 import { LinkRoutingModule } from "./link.routing.module";
+import { FormsMoLinksModule } from '../../components/forms-mo-links/forms-mo-links.module';
+import { LinkListViewComponent } from './link-list-view/link-list-view.component';
 
 
 @NgModule({
   declarations: [
-    LinkComponent
+    LinkListViewComponent
   ],
   imports: [
     CommonModule,
-    LinkRoutingModule
+    LinkRoutingModule,
+    FormsMoLinksModule
   ]
 })
 export class LinkModule {

@@ -1,1 +1,13 @@
-<p>login-form works!</p>
+<app-input-text
+  [placeholder]="'Email'"
+  [parentForm]='this.loginForm'
+  [formCtrlName]="'email'"
+>
+</app-input-text>
+
+<app-input-password
+  [placeholder]="'Password'"
+  [parentForm]='this.loginForm'
+  [formCtrlName]="'password'"
+>
+</app-input-password>

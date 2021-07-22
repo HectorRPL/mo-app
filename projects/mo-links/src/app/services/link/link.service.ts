@@ -3,7 +3,7 @@ import { Observable, throwError } from 'rxjs';
 import { TARGET } from '../../const/enviromets';
 import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { ListInterface } from '../../interfaces/list-interface';
+import { LinkInterface } from '../../interfaces/link-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,25 +15,25 @@ export class LinkService {
   ) {
   }
 
-  postNewLink(link: ListInterface): Observable<ListInterface> {
+  postNewLink(link: LinkInterface): Observable<LinkInterface> {
     const url = `${TARGET}links`;
-    return this.httpClient.post<ListInterface>(url, link)
+    return this.httpClient.post<LinkInterface>(url, link)
       .pipe(
         catchError(err => throwError(err))
       );
   }
 
-  getLinks(): Observable<ListInterface[]> {
+  getLinks(): Observable<LinkInterface[]> {
     const url = `${TARGET}links`;
-    return this.httpClient.get<ListInterface[]>(url)
+    return this.httpClient.get<LinkInterface[]>(url)
       .pipe(
         catchError(err => throwError(err))
       );
   }
 
-  deleteLink(id: string): Observable<ListInterface> {
+  deleteLink(id: string): Observable<LinkInterface> {
     const url = `${TARGET}links`;
-    return this.httpClient.delete<ListInterface>(url)
+    return this.httpClient.delete<LinkInterface>(url)
       .pipe(
         catchError(err => throwError(err))
       );

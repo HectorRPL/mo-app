@@ -1,1 +1,13 @@
-<p>link-form works!</p>
+<app-input-text
+  [placeholder]="'URL'"
+  [parentForm]='this.linkForm'
+  [formCtrlName]="'url'"
+>
+</app-input-text>
+
+<app-input-text
+  [placeholder]="'Nombre'"
+  [parentForm]='this.linkForm'
+  [formCtrlName]="'name'"
+>
+</app-input-text>

@@ -4,6 +4,8 @@ import { NavigateToLoginButtonComponent } from './navigate-to-login-button/navig
 import { NavigateToRegisterButtonComponent } from './navigate-to-register-button/navigate-to-register-button.component';
 import { PostLinkButtonComponent } from './post-link-button/post-link-button.component';
 import { DeleteLinkIconButtonComponent } from './delete-link-icon-button/delete-link-icon-button.component';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,10 +13,18 @@ import { DeleteLinkIconButtonComponent } from './delete-link-icon-button/delete-
     NavigateToLoginButtonComponent,
     NavigateToRegisterButtonComponent,
     PostLinkButtonComponent,
-    DeleteLinkIconButtonComponent
+    DeleteLinkIconButtonComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule,
+    RouterModule
+  ],
+  exports: [
+    NavigateToLoginButtonComponent,
+    NavigateToRegisterButtonComponent,
+    PostLinkButtonComponent,
+    DeleteLinkIconButtonComponent,
   ]
 })
 export class ButtonsModule {

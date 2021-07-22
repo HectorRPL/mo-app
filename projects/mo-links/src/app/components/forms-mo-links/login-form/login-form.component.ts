@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthInterface } from '../../../interfaces/auth-interface';
 
 @Component({
   selector: 'app-login-form',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  // @ts-ignore
+  loginForm: FormGroup;
 
-  ngOnInit(): void {
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
   }
 
+  ngOnInit(): void {
+    const user: AuthInterface = {
+      email: '',
+      password: ''
+    };
+    this.createForm(user);
+  }
+
+  createForm(user: AuthInterface): void {
+    {
+      this.loginForm = this.formBuilder.group({
+        'email': new FormControl(user.email, [
+          Validators.required,
+          Validators.maxLength(32),
+          Validators.email
+        ]),
+        'password': new FormControl(user.password, [
+          Validators.required,
+          Validators.maxLength(32)
+        ]),
+      });
+    }
+
+  }
 }

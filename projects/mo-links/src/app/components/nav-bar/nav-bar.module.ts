@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from "@angular/material/card";
 import { NavBarComponent } from "./nav-bar.component";
+import { ButtonsModule } from '../buttons/buttons.module';
 
 
 
@@ -11,7 +12,8 @@ import { NavBarComponent } from "./nav-bar.component";
   ],
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    ButtonsModule
   ],
   exports: [
     NavBarComponent
