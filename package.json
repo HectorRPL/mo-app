@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "startMoLinks": "ng serve moLinks",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
