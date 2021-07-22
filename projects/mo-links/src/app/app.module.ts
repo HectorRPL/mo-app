@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LinkListComponent } from './components/link-list/link-list.component';
+import { NavBarModule } from "./components/nav-bar/nav-bar.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LinkListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
