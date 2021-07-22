@@ -1,5 +1,6 @@
 export interface AuthInterface {
-  name: String;
+  name?: String;
   email: String;
   password: String;
+  token?: String;
 }

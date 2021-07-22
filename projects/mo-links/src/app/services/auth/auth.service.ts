@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TARGET } from '../../const/enviromets';
@@ -21,10 +21,15 @@ export class AuthService {
       );
   }
 
-  loginUser(user: AuthInterface): Observable<string> {
+  loginUser(user: AuthInterface): Observable<String> {
     const url = `${TARGET}login`;
-    return this.httpClient.post<string>(url, user)
+    return this.httpClient.post<String>(url, user)
       .pipe(
+        map((response: any) => {
+          console.log(response);
+          this.saveTokenInLocalStorage(response.token);
+          return response;
+        }),
         catchError(err => throwError(err))
       );
   }
@@ -35,6 +40,17 @@ export class AuthService {
       .pipe(
         catchError(err => throwError(err))
       );
+  }
+
+  // manage token //
+
+  saveTokenInLocalStorage(token: string) {
+    localStorage.setItem('moLinks', JSON.stringify(token));
+
+  }
+
+  getTokenFromLocalStorage(): string {
+    return JSON.parse(<string>localStorage.getItem('moLinks'));
   }
 
 }
