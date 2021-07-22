@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
 import { AuthInterface } from '../../../interfaces/auth-interface';
 
 @Component({
@@ -12,7 +11,6 @@ export class RegisterFormComponent implements OnInit {
 
   // @ts-ignore
   registerForm: FormGroup;
-  destroy$ = new Subject();
 
   constructor(
     private formBuilder: FormBuilder
