@@ -5,12 +5,21 @@ const routes: Routes = [
   {
     path: 'link',
     loadChildren: () => import('./views/link/link.module').then(module => module.LinkModule),
-    data: {preload: true}
+    data: {preload: false}
   },
   {
     path: 'auth',
     loadChildren: () => import('./views/auth/auth.module').then(module => module.AuthModule),
-    data: {preload: true}
+    data: {preload: false}
+  },
+  {
+    path: '',
+    redirectTo: '/auth/register',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '/auth/register'
   }
 ];
 
