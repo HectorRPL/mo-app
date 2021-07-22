@@ -6,6 +6,11 @@ const routes: Routes = [
     path: 'link',
     loadChildren: () => import('./views/link/link.module').then(module => module.LinkModule),
     data: {preload: true}
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./views/auth/auth.module').then(module => module.AuthModule),
+    data: {preload: true}
   }
 ];
 
