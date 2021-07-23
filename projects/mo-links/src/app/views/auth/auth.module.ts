@@ -4,6 +4,7 @@ import { AuthRoutingModule } from "./auth.routing.module";
 import { FormsMoLinksModule } from '../../components/forms-mo-links/forms-mo-links.module';
 import { RegisterViewComponent } from './register-view/register-view.component';
 import { LoginViewComponent } from './login-view/login-view.component';
+import { ButtonsModule } from '../../components/buttons/buttons.module';
 
 
 
@@ -13,10 +14,11 @@ import { LoginViewComponent } from './login-view/login-view.component';
     LoginViewComponent,
 
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    FormsMoLinksModule,
-  ],
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        FormsMoLinksModule,
+        ButtonsModule,
+    ],
 })
 export class AuthModule { }

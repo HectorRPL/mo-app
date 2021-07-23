@@ -1,39 +1,39 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthInterface } from '../../../interfaces/auth-interface';
 import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { AuthService } from '../../../services/auth/auth.service';
 import { Subject } from 'rxjs';
-import { LinkService } from '../../../services/link/link.service';
 
 @Component({
-  selector: 'app-delete-link-icon-button',
-  templateUrl: './delete-link-icon-button.component.html',
-  styleUrls: ['./delete-link-icon-button.component.css']
+  selector: 'app-post-register-button',
+  templateUrl: './post-register-button.component.html',
+  styleUrls: ['./post-register-button.component.css']
 })
-export class DeleteLinkIconButtonComponent implements OnInit {
+export class PostRegisterButtonComponent implements OnInit {
 
   // @ts-ignore
-  @Input() id: string;
-  @Output() response: EventEmitter<AuthInterface> = new EventEmitter();
+  @Input() user: AuthInterface;
+  @Output() response: EventEmitter<string> = new EventEmitter();
   destroy$ = new Subject();
   loading: boolean = false;
 
   constructor(
-    private linkService: LinkService
+    private authService: AuthService
   ) {
   }
 
   ngOnInit(): void {
   }
 
-  clickHandler(id: string): void {
+  clickHandler(user: AuthInterface): void {
     this.loading = true;
-    this.linkService.deleteLink(id)
+    this.authService.registerUser(user)
       .pipe(
         distinctUntilChanged(),
         takeUntil(this.destroy$)
       )
       .subscribe(
-        (user: AuthInterface) => this.response.emit(user),
+        (id: string) => this.response.emit(id),
         (error) => console.log(error),
         () => this.loading = false,
       );

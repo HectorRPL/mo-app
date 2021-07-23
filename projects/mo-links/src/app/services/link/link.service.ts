@@ -5,9 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { LinkInterface } from '../../interfaces/link-interface';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LinkService {
 
   constructor(

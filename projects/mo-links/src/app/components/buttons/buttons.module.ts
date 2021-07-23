@@ -6,6 +6,11 @@ import { PostLinkButtonComponent } from './post-link-button/post-link-button.com
 import { DeleteLinkIconButtonComponent } from './delete-link-icon-button/delete-link-icon-button.component';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { PostRegisterButtonComponent } from './post-register-button/post-register-button.component';
+import { PostLoginButtonComponent } from './post-login-button/post-login-button.component';
+import { MatIconModule } from '@angular/material/icon';
+import { AuthService } from '../../services/auth/auth.service';
+import { LinkService } from '../../services/link/link.service';
 
 
 @NgModule({
@@ -14,17 +19,26 @@ import { RouterModule } from '@angular/router';
     NavigateToRegisterButtonComponent,
     PostLinkButtonComponent,
     DeleteLinkIconButtonComponent,
+    PostRegisterButtonComponent,
+    PostLoginButtonComponent,
   ],
   imports: [
     CommonModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    MatIconModule,
   ],
   exports: [
     NavigateToLoginButtonComponent,
     NavigateToRegisterButtonComponent,
     PostLinkButtonComponent,
     DeleteLinkIconButtonComponent,
+    PostRegisterButtonComponent,
+    PostLoginButtonComponent,
+  ],
+  providers: [
+    AuthService,
+    LinkService,
   ]
 })
 export class ButtonsModule {
