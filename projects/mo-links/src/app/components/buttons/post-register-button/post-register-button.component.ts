@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AuthInterface } from '../../../interfaces/auth-interface';
-import { distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { AuthService } from '../../../services/auth/auth.service';
 import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-post-register-button',
   templateUrl: './post-register-button.component.html',
-  styleUrls: ['./post-register-button.component.css']
+  styleUrls: ['./post-register-button.component.css'],
 })
 export class PostRegisterButtonComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class PostRegisterButtonComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
   ) {
   }
 

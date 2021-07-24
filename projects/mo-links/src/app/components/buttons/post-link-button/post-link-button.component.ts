@@ -7,7 +7,7 @@ import { LinkInterface } from '../../../interfaces/link-interface';
 @Component({
   selector: 'app-post-link-button',
   templateUrl: './post-link-button.component.html',
-  styleUrls: ['./post-link-button.component.css']
+  styleUrls: ['./post-link-button.component.css'],
 })
 export class PostLinkButtonComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class PostLinkButtonComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    private linkService: LinkService
+    private linkService: LinkService,
   ) {
   }
 

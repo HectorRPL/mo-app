@@ -7,7 +7,7 @@ import { AuthService } from '../../../services/auth/auth.service';
 @Component({
   selector: 'app-post-login-button',
   templateUrl: './post-login-button.component.html',
-  styleUrls: ['./post-login-button.component.css']
+  styleUrls: ['./post-login-button.component.css'],
 })
 export class PostLoginButtonComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class PostLoginButtonComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
   ) {
   }
 
@@ -30,7 +30,7 @@ export class PostLoginButtonComponent implements OnInit {
     this.authService.registerUser(user)
       .pipe(
         distinctUntilChanged(),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe(
         (id: string) => this.response.emit(id),
