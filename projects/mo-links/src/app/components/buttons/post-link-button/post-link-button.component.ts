@@ -13,6 +13,7 @@ export class PostLinkButtonComponent implements OnInit {
 
   // @ts-ignore
   @Input() link: LinkInterface;
+  @Input() isInvalid: boolean = false;
   @Output() response: EventEmitter<LinkInterface> = new EventEmitter();
   destroy$ = new Subject();
   loading: boolean = false;

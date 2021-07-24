@@ -9,7 +9,7 @@ import { LinkInterface } from '../../interfaces/link-interface';
 export class LinkService {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
   ) {
   }
 
@@ -17,7 +17,7 @@ export class LinkService {
     const url = `${TARGET}links`;
     return this.httpClient.post<LinkInterface>(url, link)
       .pipe(
-        catchError(err => throwError(err))
+        catchError(err => throwError(err)),
       );
   }
 
@@ -25,7 +25,7 @@ export class LinkService {
     const url = `${TARGET}links`;
     return this.httpClient.get<LinkInterface[]>(url)
       .pipe(
-        catchError(err => throwError(err))
+        catchError(err => throwError(err)),
       );
   }
 
@@ -33,7 +33,7 @@ export class LinkService {
     const url = `${TARGET}links`;
     return this.httpClient.delete<LinkInterface>(url)
       .pipe(
-        catchError(err => throwError(err))
+        catchError(err => throwError(err)),
       );
   }
 
