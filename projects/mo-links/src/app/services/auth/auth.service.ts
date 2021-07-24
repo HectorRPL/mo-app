@@ -21,12 +21,11 @@ export class AuthService {
       );
   }
 
-  loginUser(user: AuthInterface): Observable<String> {
+  loginUser(user: AuthInterface): Observable<string> {
     const url = `${TARGET}login`;
-    return this.httpClient.post<String>(url, user)
+    return this.httpClient.post<string>(url, user)
       .pipe(
         map((response: any) => {
-          console.log(response);
           this.saveTokenInLocalStorage(response.token);
           return response;
         }),

@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthInterface } from '../../../interfaces/auth-interface';
 
 @Component({
   selector: 'app-register-view',
   templateUrl: './register-view.component.html',
-  styleUrls: ['./register-view.component.css']
+  styleUrls: ['./register-view.component.css'],
 })
 export class RegisterViewComponent implements OnInit {
 
+  // @ts-ignore
+  user: AuthInterface
   isInvalid: boolean = true;
 
   constructor(
@@ -18,16 +21,15 @@ export class RegisterViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getUser(event: any) {
-    console.log('getUser: ', event);
+  getUser(user: AuthInterface): void {
+    this.user = user;
   }
 
-  getStatusForm(isValid: boolean) {
+  getStatusForm(isValid: boolean): void {
     this.isInvalid = !isValid;
   }
 
-  getApiResponse(id: string) {
-    console.log(id);
+  navigateToLogin(id: string): void {
     this.router.navigate([`/auth/login`]).then();
   }
 

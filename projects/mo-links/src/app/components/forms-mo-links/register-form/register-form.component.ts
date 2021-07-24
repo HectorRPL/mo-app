@@ -44,7 +44,7 @@ export class RegisterFormComponent implements OnInit {
       'email': new FormControl(user.email, [
         Validators.required,
         Validators.maxLength(32),
-        Validators.email
+        Validators.email,
       ]),
       'password': new FormControl(user.password, [
         Validators.required,

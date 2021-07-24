@@ -5,7 +5,8 @@
 </app-register-form>
 
 <app-post-register-button
-  (response)="this.getApiResponse($event);"
+  [user]="this.user"
   [isInvalid]="this.isInvalid"
+  (response)="this.navigateToLogin($event);"
 >
 </app-post-register-button>

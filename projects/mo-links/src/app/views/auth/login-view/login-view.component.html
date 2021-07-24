@@ -1,2 +1,12 @@
-<app-login-form></app-login-form>
-<app-post-login-button></app-post-login-button>
+<app-login-form
+  (emitUser)="this.getUser($event);"
+  (isValidForm)="this.getStatusForm($event)"
+>
+</app-login-form>
+
+<app-post-login-button
+  [user]="this.user"
+  [isInvalid]="this.isInvalid"
+  (response)="this.navigateToLinkList();"
+>
+</app-post-login-button>

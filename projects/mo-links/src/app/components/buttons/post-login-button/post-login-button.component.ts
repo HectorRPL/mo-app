@@ -13,6 +13,7 @@ export class PostLoginButtonComponent implements OnInit {
 
   // @ts-ignore
   @Input() user: AuthInterface;
+  @Input() isInvalid: boolean = false;
   @Output() response: EventEmitter<string> = new EventEmitter();
   destroy$ = new Subject();
   loading: boolean = false;
@@ -27,7 +28,7 @@ export class PostLoginButtonComponent implements OnInit {
 
   clickHandler(user: AuthInterface): void {
     this.loading = true;
-    this.authService.registerUser(user)
+    this.authService.loginUser(user)
       .pipe(
         distinctUntilChanged(),
         takeUntil(this.destroy$),
