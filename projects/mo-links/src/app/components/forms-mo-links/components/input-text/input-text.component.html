@@ -14,5 +14,7 @@
       [formControlName]='this.formCtrlName'
     >
     <mat-error *ngIf="this.parentForm.get(this.formCtrlName)?.hasError('required')"><strong> * Requerido </strong></mat-error>
+    <mat-error *ngIf="this.parentForm.get(this.formCtrlName)?.hasError('email')"><strong> * No válido </strong></mat-error>
+    <mat-error *ngIf="this.parentForm.get(this.formCtrlName)?.hasError('maxlength')"><strong> * Muchos caracteres </strong></mat-error>
   </mat-form-field>
 </form>

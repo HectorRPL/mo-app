@@ -1,2 +1,11 @@
-<app-register-form></app-register-form>
-<app-post-register-button></app-post-register-button>
+<app-register-form
+  (emitUser)="this.getUser($event);"
+  (isValidForm)="this.getStatusForm($event)"
+>
+</app-register-form>
+
+<app-post-register-button
+  (response)="this.getApiResponse($event);"
+  [isInvalid]="this.isInvalid"
+>
+</app-post-register-button>

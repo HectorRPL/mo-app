@@ -2,6 +2,7 @@
   mat-raised-button
   color="primary"
   (click)="this.clickHandler(this.user);"
+  [disabled]="this.isInvalid"
 >
   SIGNUP
 </button>

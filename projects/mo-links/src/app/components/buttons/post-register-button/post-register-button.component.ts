@@ -13,6 +13,7 @@ export class PostRegisterButtonComponent implements OnInit {
 
   // @ts-ignore
   @Input() user: AuthInterface;
+  @Input() isInvalid: boolean = false;
   @Output() response: EventEmitter<string> = new EventEmitter();
   destroy$ = new Subject();
   loading: boolean = false;
@@ -29,7 +30,6 @@ export class PostRegisterButtonComponent implements OnInit {
     this.loading = true;
     this.authService.registerUser(user)
       .pipe(
-        distinctUntilChanged(),
         takeUntil(this.destroy$)
       )
       .subscribe(
