@@ -4,6 +4,7 @@ import { LinkRoutingModule } from './link.routing.module';
 import { FormsMoLinksModule } from '../../components/forms-mo-links/forms-mo-links.module';
 import { LinkListViewComponent } from './link-list-view/link-list-view.component';
 import { ButtonsModule } from '../../components/buttons/buttons.module';
+import { LinkListModule } from '../../components/link-list/link-list.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ButtonsModule } from '../../components/buttons/buttons.module';
     CommonModule,
     LinkRoutingModule,
     FormsMoLinksModule,
+    LinkListModule,
     ButtonsModule,
   ],
 })

@@ -1,1 +1,9 @@
-<p>link-list works!</p>
+<mat-card
+  *ngFor="let link of this.links"
+>
+  {{link.url}} <br> {{link.name}}
+  <app-delete-link-icon-button
+    [idLink]="link.id"
+  >
+  </app-delete-link-icon-button>
+</mat-card>

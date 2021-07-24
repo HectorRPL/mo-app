@@ -12,7 +12,7 @@ import { LinkService } from '../../../services/link/link.service';
 export class DeleteLinkIconButtonComponent implements OnInit {
 
   // @ts-ignore
-  @Input() id: string;
+  @Input() idLink: any;
   @Output() response: EventEmitter<AuthInterface> = new EventEmitter();
   destroy$ = new Subject();
   loading: boolean = false;
