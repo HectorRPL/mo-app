@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { LinkListComponent } from './link-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { ButtonsModule } from '../buttons/buttons.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LinkListComponent,
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatCardModule,
+    ButtonsModule,
+  ],
+  exports: [
+    LinkListComponent,
+  ],
 })
-export class LinkListModule { }
+export class LinkListModule {
+}
