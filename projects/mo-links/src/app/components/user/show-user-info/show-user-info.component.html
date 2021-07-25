@@ -1,0 +1,11 @@
+<div *ngIf="this.user">
+  <app-show-user-photo
+    [urlImage]="this.user.avatar"
+  >
+  </app-show-user-photo>
+
+  <app-show-text-info
+    [user]="this.user"
+  >
+  </app-show-text-info>
+</div>

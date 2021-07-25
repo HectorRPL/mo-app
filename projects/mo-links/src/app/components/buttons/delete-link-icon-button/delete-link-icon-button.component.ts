@@ -7,7 +7,7 @@ import { LinkService } from '../../../services/link/link.service';
 @Component({
   selector: 'app-delete-link-icon-button',
   templateUrl: './delete-link-icon-button.component.html',
-  styleUrls: ['./delete-link-icon-button.component.css']
+  styleUrls: ['./delete-link-icon-button.component.css'],
 })
 export class DeleteLinkIconButtonComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class DeleteLinkIconButtonComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
-    private linkService: LinkService
+    private linkService: LinkService,
   ) {
   }
 
@@ -30,7 +30,7 @@ export class DeleteLinkIconButtonComponent implements OnInit {
     this.linkService.deleteLink(id)
       .pipe(
         distinctUntilChanged(),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe(
         (user: AuthInterface) => this.response.emit(user),

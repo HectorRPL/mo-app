@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TARGET } from '../../const/enviromets';
 import { AuthInterface } from '../../interfaces/auth-interface';
+import { UserInterface } from '../../interfaces/user-interface';
 
 @Injectable()
 export class AuthService {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
   ) {
   }
 
@@ -17,7 +18,7 @@ export class AuthService {
     const url = `${TARGET}register`;
     return this.httpClient.post<string>(url, user)
       .pipe(
-        catchError(err => throwError(err))
+        catchError(err => throwError(err)),
       );
   }
 
@@ -29,15 +30,22 @@ export class AuthService {
           this.saveTokenInLocalStorage(response.token);
           return response;
         }),
-        catchError(err => throwError(err))
+        catchError(err => throwError(err)),
       );
   }
 
-  getUser(id: string): Observable<AuthInterface> {
+  getUser(id: string): Observable<UserInterface> {
     const url = `${TARGET}1`;
-    return this.httpClient.get<AuthInterface>(url)
+    return of({
+      'id': '1',
+      'createdAt': '2021-03-18T18:01:26.303Z',
+      'name': 'First1 Last1',
+      'email': 'first1.last1@mail.com',
+      'avatar': 'https://randomuser.me/api/portraits/men/1.jpg',
+    });
+    return this.httpClient.get<UserInterface>(url)
       .pipe(
-        catchError(err => throwError(err))
+        catchError(err => throwError(err)),
       );
   }
 

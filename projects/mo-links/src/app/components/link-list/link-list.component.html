@@ -1,7 +1,13 @@
 <mat-card
+  class="rectangle"
   *ngFor="let link of this.links"
 >
-  {{link.url}} <br> {{link.name}}
+  <div class="url">{{link.url}}</div>
+
+
+  <div class="name-url">{{link.name}}</div>
+
+
   <app-delete-link-icon-button
     [idLink]="link.id"
   >
