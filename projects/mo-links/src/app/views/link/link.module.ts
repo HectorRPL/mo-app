@@ -6,6 +6,7 @@ import { LinkListViewComponent } from './link-list-view/link-list-view.component
 import { ButtonsModule } from '../../components/buttons/buttons.module';
 import { LinkListModule } from '../../components/link-list/link-list.module';
 import { UserModule } from '../../components/user/user.module';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UserModule } from '../../components/user/user.module';
     LinkListModule,
     ButtonsModule,
     UserModule,
+    MatCardModule,
   ],
 })
 export class LinkModule {

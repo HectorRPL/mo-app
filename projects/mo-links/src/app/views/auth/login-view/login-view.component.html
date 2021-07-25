@@ -1,14 +1,22 @@
-<app-show-logo></app-show-logo>
+<div class="container">
+  <div>
+    <app-show-logo></app-show-logo>
 
-<app-login-form
-  (emitUser)="this.getUser($event);"
-  (isValidForm)="this.getStatusForm($event)"
->
-</app-login-form>
+    <h2>LOGIN</h2>
 
-<app-post-login-button
-  [user]="this.user"
-  [isInvalid]="this.isInvalid"
-  (response)="this.navigateToLinkList();"
->
-</app-post-login-button>
+    <app-login-form
+      (emitUser)="this.getUser($event);"
+      (isValidForm)="this.getStatusForm($event)"
+    >
+    </app-login-form>
+
+    <app-post-login-button
+      [user]="this.user"
+      [isInvalid]="this.isInvalid"
+      (response)="this.navigateToLinkList();"
+    >
+    </app-post-login-button>
+
+  </div>
+
+</div>

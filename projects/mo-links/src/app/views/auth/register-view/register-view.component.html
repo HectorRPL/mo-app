@@ -1,14 +1,26 @@
-<app-show-logo></app-show-logo>
+<div class="container">
+  <div>
+    <app-show-logo></app-show-logo>
 
-<app-register-form
-  (emitUser)="this.getUser($event);"
-  (isValidForm)="this.getStatusForm($event);"
->
-</app-register-form>
+    <h2>SIGNUP</h2>
 
-<app-post-register-button
-  [user]="this.user"
-  [isInvalid]="this.isInvalid"
-  (response)="this.navigateToLogin($event);"
->
-</app-post-register-button>
+    <app-register-form
+      (emitUser)="this.getUser($event);"
+      (isValidForm)="this.getStatusForm($event);"
+    >
+    </app-register-form>
+
+    <app-post-register-button
+      [user]="this.user"
+      [isInvalid]="this.isInvalid"
+      (response)="this.navigateToLogin($event);"
+    >
+    </app-post-register-button>
+
+    <p class="center-text">
+      By Creating account You agree to the <br> Terms of use and Privacy Polycy
+    </p>
+
+  </div>
+</div>
+

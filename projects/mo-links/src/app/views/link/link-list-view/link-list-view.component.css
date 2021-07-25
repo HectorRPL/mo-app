@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: 336px 936px;
+  grid-gap: 40px;
+  padding: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}

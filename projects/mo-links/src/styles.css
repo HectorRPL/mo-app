@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Oxygen";
+  src: local("Montserrat"), url(./assets/font/montserrat-semibold-600.ttf) format("truetype");
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+/********* ********* *********
+
+      inputs fields
+
+ ********* ********* *********/
+
+mat-form-field {
+  width: 100%;
+}
+
+
+
+/********* ********* *********
+
+      buttons
+
+ ********* ********* *********/
+
+button {
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.primary-color {
+  color: #008DF3;
+}

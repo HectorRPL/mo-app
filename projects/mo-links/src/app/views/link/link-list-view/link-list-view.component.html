@@ -1,16 +1,27 @@
-<app-link-form
-  (emitLink)="this.getLink($event);"
-  (isValidForm)="this.getStatusForm($event);"
->
-</app-link-form>
+<div class="container">
+  <mat-card>
+    <app-show-user-info class="user-info-section"></app-show-user-info>
+  </mat-card>
+  <div class="link-section">
 
-<app-post-link-button
-  [link]="this.link"
-  [isInvalid]="this.isInvalid"
-  (response)="this.refreshLinkList($event);"
->
-</app-post-link-button>
+    <mat-card class="link-form">
+      <app-link-form
+        class="app-link-form"
+        (emitLink)="this.getLink($event);"
+        (isValidForm)="this.getStatusForm($event);"
+      >
+      </app-link-form>
+      <div class="button-container">
+        <app-post-link-button
+          [link]="this.link"
+          [isInvalid]="this.isInvalid"
+          (response)="this.refreshLinkList($event);"
+        >
+        </app-post-link-button>
+      </div>
+    </mat-card>
 
-<app-link-list></app-link-list>
+    <app-link-list></app-link-list>
 
-<app-show-user-info></app-show-user-info>
+  </div>
+</div>
